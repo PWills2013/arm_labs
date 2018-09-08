@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TeamUp.ez</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "TeamUp.ez", '/posts', id: "logo" %>
+        <a href="" class="navbar-left"><%= image_tag("Team.png", :alt => "teamUp Logo") %></a>
+        
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= form_tag(posts_path, :method => 'get', id:"search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "search Posts" %>
+                <%= submit_tag "Search", :name => nil %>
+              <% end %>
+            </li>
+            <li><%= link_to "Posts", '/posts' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
