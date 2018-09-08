@@ -6,7 +6,7 @@
 
 This was a ruby on rails web app submitted as a final project for a web development course.
 
-##Connect4
+## Connect4
 
 This is a simple connect4 AI using alpha beta search tree.  It's heuristic function used is simple however fulfills the requirement that it never crashes else match is forfeit.
 
